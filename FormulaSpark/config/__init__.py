@@ -1,0 +1,1 @@
+# FormulaSpark Configuration Module

@@ -1,0 +1,22 @@
+{
+    "ollama_base_url": "http://localhost:11434",
+    "history": [
+        [
+            "i need the sum of @NetPremium for the different values in @PolicyId",
+            "=SUMIFS(D:D, C:C, C2)"
+        ],
+        [
+            "i need the sum of @NetPremium for the different @PolicyId",
+            "=SUMIFS(Total Report (Internal use)!K:K, Total Report (Internal use)!A:A, \"PolicyId\")"
+        ]
+    ],
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_retries": 3,
+    "use_context": true,
+    "auto_validate": true,
+    "cache_enabled": true,
+    "history_limit": 1000,
+    "timeout": 90,
+    "selected_headers": {}
+}
