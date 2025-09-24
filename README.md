@@ -1,8 +1,50 @@
 # FormulaSpark
 
+<div align="center">
+
+![FormulaSpark Icon](formulaspark.ico)
+
 **An Intelligent Excel Formula Generator Powered by Ollama AI**
 
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://python.org)
+[![PyQt5](https://img.shields.io/badge/PyQt5-5.15+-green.svg)](https://pypi.org/project/PyQt5/)
+[![Ollama](https://img.shields.io/badge/Ollama-AI%20Powered-orange.svg)](https://ollama.com)
+[![License](https://img.shields.io/badge/License-Personal%20Use-yellow.svg)]()
+
+</div>
+
 FormulaSpark is a professional-grade desktop application that transforms natural language descriptions into precise Excel formulas using local AI models via Ollama. Built with PyQt5, it provides an intuitive interface for Excel users to generate complex formulas without memorizing syntax.
+
+## 📑 Table of Contents
+
+- [📸 Screenshots](#-screenshots)
+- [🎯 What is FormulaSpark?](#-what-is-formulaspark)
+- [🏗️ Architecture Overview](#️-architecture-overview)
+- [🔄 How FormulaSpark Works](#-how-formulaspark-works)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Features](#-features)
+- [📦 Installation](#-installation)
+- [🎬 Demo](#-demo)
+- [🎯 Usage Guide](#-usage-guide)
+- [⚙️ Configuration](#️-configuration)
+- [🔧 Development](#-development)
+- [📊 Performance](#-performance)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🎉 Acknowledgments](#-acknowledgments)
+- [🔮 Future Roadmap](#-future-roadmap)
+
+## 📸 Screenshots
+
+<div align="center" style="width:400px">
+
+### Main Interface
+![Main Interface](screenshots/main_interface.png) 
+*The main FormulaSpark interface showing the formula generation panel*
+
+
+</div>
 
 ## 🎯 What is FormulaSpark?
 
@@ -177,33 +219,59 @@ STEP 4: VALIDATION & INSERTION
 ## 📁 Project Structure
 
 ```
-FormulaSpark/
-├── main.py                     # Application entry point
-├── requirements.txt            # Python dependencies
-├── config.json                 # Default configuration
-├── formulaspark_config.json    # User configuration
-├── formula_cache.json          # Formula cache storage
-├── config/                     # Configuration management
-│   ├── __init__.py
-│   └── settings.py            # Settings, constants, prompt templates
-├── ai/                        # AI and Ollama integration
-│   ├── __init__.py
-│   └── ollama_client.py       # Ollama API client and caching
-├── tools/                     # Core tools and utilities
-│   ├── __init__.py
-│   ├── excel_handler.py       # Excel integration and operations
-│   └── formula_validator.py   # Formula validation and testing
-├── ui/                        # User interface components
-│   ├── __init__.py
-│   ├── dialogs.py             # All dialog classes
-│   ├── main_window.py         # Main window UI
-│   └── main_window_methods.py # Window event handlers
-└── utils/                     # Utility functions
-    ├── __init__.py
-    └── helpers.py             # Helper functions and utilities
+ExcelWrapper/
+├── run_formulaspark.py        # Main launcher script (recommended entry point)
+├── formulaspark.ico           # Application icon
+├── formulaspark_config.json   # User configuration
+├── requirements.txt           # Python dependencies
+├── README.md                  # This file
+├── create_icon.py            # Icon creation utility
+├── screenshots/              # Screenshots directory (add your images here)
+│   ├── main_interface.png
+│   ├── header_picker.png
+│   ├── settings.png
+│   ├── history.png
+│   └── excel_integration.png
+└── FormulaSpark/             # Main application directory
+    ├── main.py               # Application entry point
+    ├── requirements.txt      # Python dependencies
+    ├── config/               # Configuration management
+    │   ├── __init__.py
+    │   └── settings.py      # Settings, constants, prompt templates
+    ├── ai/                   # AI and Ollama integration
+    │   ├── __init__.py
+    │   └── ollama_client.py # Ollama API client and caching
+    ├── tools/                # Core tools and utilities
+    │   ├── __init__.py
+    │   ├── excel_handler.py # Excel integration and operations
+    │   └── formula_validator.py # Formula validation and testing
+    ├── ui/                   # User interface components
+    │   ├── __init__.py
+    │   ├── dialogs.py       # All dialog classes
+    │   ├── main_window.py   # Main window UI
+    │   └── main_window_methods.py # Window event handlers
+    └── utils/                # Utility functions
+        ├── __init__.py
+        └── helpers.py        # Helper functions and utilities
 ```
 
 ## 🚀 Features
+
+<div align="center">
+
+### ✨ Key Features Overview
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 🤖 **AI-Powered** | Natural language to Excel formulas | ✅ Active |
+| 🏷️ **Smart Tags** | Use @Sales instead of column letters | ✅ Active |
+| 📊 **Excel Integration** | Direct integration with Microsoft Excel | ✅ Active |
+| 🔄 **Formula Caching** | 60-80% faster repeated requests | ✅ Active |
+| ✅ **Validation** | Pre-insertion formula testing | ✅ Active |
+| 📈 **History** | Track and reuse previous formulas | ✅ Active |
+| ⚙️ **Configurable** | Customizable AI parameters | ✅ Active |
+
+</div>
 
 ### Core Features
 
@@ -280,11 +348,13 @@ Use: "Sum @Sales where @PaymentDate is greater than 0"
 #### 1. Install FormulaSpark
 ```bash
 # Clone or download the project
-git clone <repository-url>
-cd FormulaSpark
+git clone https://github.com/surenjanath/FormulaSpark
+cd ExcelWrapper
 
 # Install Python dependencies
 pip install -r requirements.txt
+# OR install from the FormulaSpark subdirectory
+pip install -r FormulaSpark/requirements.txt
 ```
 
 #### 2. Install and Configure Ollama
@@ -301,8 +371,33 @@ ollama pull mistral       # Fast and efficient model
 
 #### 3. Run FormulaSpark
 ```bash
+# Option 1: Use the launcher (recommended)
+python run_formulaspark.py
+
+# Option 2: Run directly from FormulaSpark directory
+cd FormulaSpark
 python main.py
 ```
+
+## 🎬 Demo
+
+<div align="center">
+
+### 🚀 Quick Demo
+
+[![Demo Video](screenshots/demo_video.png)](https://youtu.be/vHZl2qMvNOk)
+*Click to watch FormulaSpark in action*
+
+### 📋 Demo Scenarios
+
+| Scenario | Input | Output |
+|----------|-------|--------|
+| **Simple Sum** | "Sum all sales" | `=SUM(Sales_Column)` |
+| **Conditional Sum** | "Sum @Sales where @Region is North" | `=SUMIFS(Sales_Column, Region_Column, "North")` |
+| **Date Range** | "Count records from 2024" | `=COUNTIFS(Date_Column, ">=2024-01-01", Date_Column, "<=2024-12-31")` |
+| **Complex Pivot** | "Show years against @Payable" | `=LET(lastRow,MAX(IF(Sheet!K:K<>"",ROW(Sheet!K:K))),years,UNIQUE(YEAR(Sheet!K2:INDIRECT("Sheet!K"&lastRow))),totals,MAP(years,LAMBDA(y,SUMIFS(Sheet!AG2:INDIRECT("Sheet!AG"&lastRow),Sheet!E2:INDIRECT("Sheet!E"&lastRow),"Outstanding",Sheet!K2:INDIRECT("Sheet!K"&lastRow),">="&DATE(y,1,1),Sheet!K2:INDIRECT("Sheet!K"&lastRow),"<="&DATE(y,12,31)))),HSTACK(years,totals))` |
+
+</div>
 
 ## 🎯 Usage Guide
 
@@ -310,7 +405,7 @@ python main.py
 
 1. **Launch FormulaSpark**
    ```bash
-   python main.py
+   python run_formulaspark.py
    ```
 
 2. **Connect to Excel**
@@ -488,6 +583,19 @@ def new_excel_operation(self, sheet_name: str) -> bool:
 
 ## 🐛 Troubleshooting
 
+<div align="center">
+
+### 🔧 Quick Fixes
+
+| Issue | Status | Solution |
+|-------|--------|----------|
+| 🔴 **Ollama Offline** | Common | Start Ollama service |
+| 🔴 **Excel Connection Failed** | Common | Check Excel COM settings |
+| 🟡 **Slow Performance** | Occasional | Enable caching |
+| 🟡 **Formula Errors** | Occasional | Check syntax and references |
+
+</div>
+
 ### Common Issues
 
 #### Ollama Connection Failed
@@ -609,6 +717,21 @@ This project is for personal use. Please respect Ollama's terms of service when 
 
 ---
 
-**FormulaSpark** - Making Excel formula generation as natural as describing what you want! 🚀
+<div align="center">
+
+## 🎉 FormulaSpark
+
+**Making Excel formula generation as natural as describing what you want!** 🚀
 
 *Transform your Excel workflow with the power of AI-driven formula generation.*
+
+---
+
+### 🌟 Star this repository if you find it helpful!
+
+[![GitHub stars](https://img.shields.io/github/stars/surenjanath/FormulaSpark?style=social)](https://github.com/surenjanath/FormulaSpark)
+[![GitHub forks](https://img.shields.io/github/forks/surenjanath/FormulaSpark?style=social)](https://github.com/surenjanath/FormulaSpark)
+
+**Built with ❤️ for Excel users worldwide**
+
+</div>

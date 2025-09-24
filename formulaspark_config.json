@@ -2,12 +2,20 @@
     "ollama_base_url": "http://localhost:11434",
     "history": [
         [
-            "i need the sum of @NetPremium for the different values in @PolicyId",
-            "=SUMIFS(D:D, C:C, C2)"
+            "I want the total of @Fish that contains the text \"Shrimp\" for the first half of the year",
+            "=SUM(SUMIFS('pos-fm-wholesale-prices-monthly'!B:B,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!C:C,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!D:D,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!E:E,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!F:F,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!G:G,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"))"
         ],
         [
-            "i need the sum of @NetPremium for the different @PolicyId",
-            "=SUMIFS(Total Report (Internal use)!K:K, Total Report (Internal use)!A:A, \"PolicyId\")"
+            "I want the @Fish that contains the text \"Shrimp\" for the first half of the year",
+            "=FILTER('pos-fm-wholesale-prices-monthly'!A2:INDIRECT(\"'pos-fm-wholesale-prices-monthly'!A\"&MAX(IF('pos-fm-wholesale-prices-monthly'!A:A<>\"\",ROW('pos-fm-wholesale-prices-monthly'!A:A)))),ISNUMBER(SEARCH(\"Shrimp\",'pos-fm-wholesale-prices-monthly'!A2:INDIRECT(\"'pos-fm-wholesale-prices-monthly'!A\"&MAX(IF('pos-fm-wholesale-prices-monthly'!A:A<>\"\",ROW('pos-fm-wholesale-prices-monthly'!A:A)))))))"
+        ],
+        [
+            "i wawnt all the sum of @Fish that contains the text \"Shrimp\" for the first half of the year",
+            "=SUM(SUMIFS('pos-fm-wholesale-prices-monthly'!B:B,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!C:C,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!D:D,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!E:E,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!F:F,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!G:G,'pos-fm-wholesale-prices-monthly'!A:A,\"*Shrimp*\"))"
+        ],
+        [
+            "i wawnt all the sum of @Fish that contains the text \"shrimps\" for the first half of the year",
+            "=SUM(SUMIFS('pos-fm-wholesale-prices-monthly'!B:B,'pos-fm-wholesale-prices-monthly'!A:A,\"*shrimps*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!C:C,'pos-fm-wholesale-prices-monthly'!A:A,\"*shrimps*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!D:D,'pos-fm-wholesale-prices-monthly'!A:A,\"*shrimps*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!E:E,'pos-fm-wholesale-prices-monthly'!A:A,\"*shrimps*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!F:F,'pos-fm-wholesale-prices-monthly'!A:A,\"*shrimps*\"),SUMIFS('pos-fm-wholesale-prices-monthly'!G:G,'pos-fm-wholesale-prices-monthly'!A:A,\"*shrimps*\"))"
         ]
     ],
     "temperature": 0.2,
